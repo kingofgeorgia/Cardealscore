@@ -1,0 +1,553 @@
+2026-02-11 15:23:07,776 ERROR API error on reload
+Traceback (most recent call last):
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\kingofgeorgia\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [WinError 10061] \u041f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u043d\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043e, \u0442.\u043a. \u043a\u043e\u043d\u0435\u0447\u043d\u044b\u0439 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440 \u043e\u0442\u0432\u0435\u0440\u0433 \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\mileon_saas\gui\main.py", line 152, in reload_data
+    self.rows = self._fetch_rows()
+                ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\mileon_saas\gui\main.py", line 169, in _fetch_rows
+    response = client.get(url, params=params)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 1053, in get
+    return self.request(
+           ~~~~~~~~~~~~^
+        "GET",
+        ^^^^^^
+    ...<7 lines>...
+        extensions=extensions,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kingofgeorgia\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [WinError 10061] \u041f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u043d\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043e, \u0442.\u043a. \u043a\u043e\u043d\u0435\u0447\u043d\u044b\u0439 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440 \u043e\u0442\u0432\u0435\u0440\u0433 \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435
+2026-02-11 15:23:15,862 ERROR API error on reload
+Traceback (most recent call last):
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\kingofgeorgia\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [WinError 10061] \u041f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u043d\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043e, \u0442.\u043a. \u043a\u043e\u043d\u0435\u0447\u043d\u044b\u0439 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440 \u043e\u0442\u0432\u0435\u0440\u0433 \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\mileon_saas\gui\main.py", line 152, in reload_data
+    self.rows = self._fetch_rows()
+                ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\mileon_saas\gui\main.py", line 169, in _fetch_rows
+    response = client.get(url, params=params)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 1053, in get
+    return self.request(
+           ~~~~~~~~~~~~^
+        "GET",
+        ^^^^^^
+    ...<7 lines>...
+        extensions=extensions,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kingofgeorgia\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [WinError 10061] \u041f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u043d\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043e, \u0442.\u043a. \u043a\u043e\u043d\u0435\u0447\u043d\u044b\u0439 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440 \u043e\u0442\u0432\u0435\u0440\u0433 \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435
+2026-02-11 15:23:17,461 INFO Starting API
+2026-02-11 15:23:19,882 WARNING API not ready yet
+2026-02-11 15:23:23,289 WARNING API not ready yet
+2026-02-11 15:23:26,780 WARNING API not ready yet
+2026-02-11 15:23:30,182 WARNING API not ready yet
+2026-02-11 15:23:33,596 WARNING API not ready yet
+2026-02-11 15:23:34,596 ERROR API failed to start
+2026-02-11 15:24:51,494 ERROR API error on reload
+Traceback (most recent call last):
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\kingofgeorgia\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [WinError 10061] \u041f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u043d\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043e, \u0442.\u043a. \u043a\u043e\u043d\u0435\u0447\u043d\u044b\u0439 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440 \u043e\u0442\u0432\u0435\u0440\u0433 \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\mileon_saas\gui\main.py", line 164, in reload_data
+    self.rows = self._fetch_rows()
+                ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\mileon_saas\gui\main.py", line 181, in _fetch_rows
+    response = client.get(url, params=params)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 1053, in get
+    return self.request(
+           ~~~~~~~~~~~~^
+        "GET",
+        ^^^^^^
+    ...<7 lines>...
+        extensions=extensions,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kingofgeorgia\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [WinError 10061] \u041f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u043d\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043e, \u0442.\u043a. \u043a\u043e\u043d\u0435\u0447\u043d\u044b\u0439 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440 \u043e\u0442\u0432\u0435\u0440\u0433 \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435
+2026-02-11 15:24:56,034 INFO Starting API
+2026-02-11 15:24:58,459 WARNING API not ready yet
+2026-02-11 15:25:01,921 WARNING API not ready yet
+2026-02-11 15:25:05,312 WARNING API not ready yet
+2026-02-11 15:25:08,721 WARNING API not ready yet
+2026-02-11 15:25:12,119 WARNING API not ready yet
+2026-02-11 15:25:13,120 ERROR API failed to start
+2026-02-11 15:25:53,579 ERROR API error on reload
+Traceback (most recent call last):
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\kingofgeorgia\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [WinError 10061] \u041f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u043d\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043e, \u0442.\u043a. \u043a\u043e\u043d\u0435\u0447\u043d\u044b\u0439 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440 \u043e\u0442\u0432\u0435\u0440\u0433 \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\mileon_saas\gui\main.py", line 164, in reload_data
+    self.rows = self._fetch_rows()
+                ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\mileon_saas\gui\main.py", line 181, in _fetch_rows
+    response = client.get(url, params=params)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 1053, in get
+    return self.request(
+           ~~~~~~~~~~~~^
+        "GET",
+        ^^^^^^
+    ...<7 lines>...
+        extensions=extensions,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kingofgeorgia\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [WinError 10061] \u041f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u043d\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043e, \u0442.\u043a. \u043a\u043e\u043d\u0435\u0447\u043d\u044b\u0439 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440 \u043e\u0442\u0432\u0435\u0440\u0433 \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435
+2026-02-11 15:25:56,149 INFO Starting API
+2026-02-11 15:25:58,588 WARNING API not ready yet
+2026-02-11 15:26:02,000 WARNING API not ready yet
+2026-02-11 15:26:05,455 WARNING API not ready yet
+2026-02-11 15:26:08,873 WARNING API not ready yet
+2026-02-11 15:26:12,289 WARNING API not ready yet
+2026-02-11 15:26:13,290 ERROR API failed to start
+2026-02-11 15:28:07,397 ERROR API error on reload
+Traceback (most recent call last):
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\kingofgeorgia\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [WinError 10061] \u041f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u043d\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043e, \u0442.\u043a. \u043a\u043e\u043d\u0435\u0447\u043d\u044b\u0439 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440 \u043e\u0442\u0432\u0435\u0440\u0433 \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\mileon_saas\gui\main.py", line 164, in reload_data
+    self.rows = self._fetch_rows()
+                ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\mileon_saas\gui\main.py", line 181, in _fetch_rows
+    response = client.get(url, params=params)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 1053, in get
+    return self.request(
+           ~~~~~~~~~~~~^
+        "GET",
+        ^^^^^^
+    ...<7 lines>...
+        extensions=extensions,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kingofgeorgia\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [WinError 10061] \u041f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u043d\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043e, \u0442.\u043a. \u043a\u043e\u043d\u0435\u0447\u043d\u044b\u0439 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440 \u043e\u0442\u0432\u0435\u0440\u0433 \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435
+2026-02-11 15:28:09,282 INFO Starting API
+2026-02-11 15:28:11,846 WARNING API not ready yet
+2026-02-11 15:28:13,376 INFO HTTP Request: GET http://127.0.0.1:8000/health "HTTP/1.1 200 OK"
+2026-02-11 15:28:13,377 INFO API started successfully
+2026-02-11 15:28:22,941 INFO Starting ingest
+2026-02-11 15:28:23,358 INFO HTTP Request: GET http://127.0.0.1:8000/health "HTTP/1.1 200 OK"
+2026-02-11 15:28:24,347 INFO HTTP Request: POST http://127.0.0.1:8000/api/listings/ingest?path=cars_data.json&company_id=1 "HTTP/1.1 200 OK"
+2026-02-11 15:28:25,655 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:28:25,658 INFO Loaded 267 listings
+2026-02-11 15:28:43,652 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:28:43,657 INFO Loaded 267 listings
+2026-02-11 15:28:49,001 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:28:49,007 INFO Loaded 267 listings
+2026-02-11 15:28:56,260 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:28:56,263 INFO Loaded 267 listings
+2026-02-11 15:28:59,181 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:28:59,185 INFO Loaded 267 listings
+2026-02-11 15:29:03,945 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:29:03,948 INFO Loaded 267 listings
+2026-02-11 15:32:27,215 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:32:27,218 INFO Loaded 267 listings
+2026-02-11 15:32:30,847 INFO Starting API
+2026-02-11 15:32:31,237 INFO HTTP Request: GET http://127.0.0.1:8000/health "HTTP/1.1 200 OK"
+2026-02-11 15:32:31,237 INFO API started successfully
+2026-02-11 15:32:34,859 INFO Starting ingest
+2026-02-11 15:32:35,243 INFO HTTP Request: GET http://127.0.0.1:8000/health "HTTP/1.1 200 OK"
+2026-02-11 15:32:35,905 INFO HTTP Request: POST http://127.0.0.1:8000/api/listings/ingest?path=cars_data.json&company_id=1 "HTTP/1.1 200 OK"
+2026-02-11 15:32:37,297 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:32:37,302 INFO Loaded 271 listings
+2026-02-11 15:32:43,381 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:32:43,384 INFO Loaded 271 listings
+2026-02-11 15:33:15,154 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:33:15,158 INFO Loaded 271 listings
+2026-02-11 15:34:00,826 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:34:00,829 INFO Loaded 271 listings
+2026-02-11 15:34:05,988 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:34:05,993 INFO Loaded 271 listings
+2026-02-11 15:34:14,091 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:34:14,094 INFO Loaded 271 listings
+2026-02-11 15:35:37,334 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:35:37,337 INFO Loaded 271 listings
+2026-02-11 15:40:05,171 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:40:05,176 INFO Loaded 271 listings
+2026-02-11 15:40:08,285 INFO Opened URL: https://myauto.ge/ka/cars/120369874
+2026-02-11 15:40:11,511 INFO Opened URL: https://myauto.ge/ka/cars/120192320
+2026-02-11 15:40:14,104 INFO Opened URL: https://myauto.ge/ka/cars/119572592
+2026-02-11 15:40:17,388 INFO Opened URL: https://myauto.ge/ka/cars/120380518
+2026-02-11 15:40:48,290 INFO Opened URL: https://myauto.ge/ka/cars/120369874
+2026-02-11 15:41:00,243 INFO Opened URL: https://myauto.ge/ka/cars/120192320
+2026-02-11 15:41:12,188 INFO Opened URL: https://myauto.ge/ka/cars/119572592
+2026-02-11 15:41:53,847 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:41:53,850 INFO Loaded 271 listings
+2026-02-11 15:41:55,593 INFO Opened URL: https://www.myauto.ge/ka/pr/120192320
+2026-02-11 15:42:04,128 INFO Opened URL: https://www.myauto.ge/ka/pr/119572592
+2026-02-11 15:43:07,918 INFO Opened URL: https://www.myauto.ge/ka/pr/120369874
+2026-02-11 15:46:41,975 ERROR API error on reload
+Traceback (most recent call last):
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\kingofgeorgia\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [WinError 10061] \u041f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u043d\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043e, \u0442.\u043a. \u043a\u043e\u043d\u0435\u0447\u043d\u044b\u0439 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440 \u043e\u0442\u0432\u0435\u0440\u0433 \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\mileon_saas\gui\main.py", line 176, in reload_data
+    self.rows = self._fetch_rows()
+                ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\mileon_saas\gui\main.py", line 198, in _fetch_rows
+    response = client.get(url, params=params)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 1053, in get
+    return self.request(
+           ~~~~~~~~~~~~^
+        "GET",
+        ^^^^^^
+    ...<7 lines>...
+        extensions=extensions,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kingofgeorgia\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\kingofgeorgia\Documents\GitHub\mileon_parsing\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [WinError 10061] \u041f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435 \u043d\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043e, \u0442.\u043a. \u043a\u043e\u043d\u0435\u0447\u043d\u044b\u0439 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440 \u043e\u0442\u0432\u0435\u0440\u0433 \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u0438\u0435
+2026-02-11 15:46:44,408 INFO Starting API
+2026-02-11 15:46:44,952 INFO HTTP Request: GET http://127.0.0.1:8000/health "HTTP/1.1 200 OK"
+2026-02-11 15:46:44,953 INFO API started successfully
+2026-02-11 15:46:52,293 INFO Starting ingest
+2026-02-11 15:46:52,720 INFO HTTP Request: GET http://127.0.0.1:8000/health "HTTP/1.1 200 OK"
+2026-02-11 15:46:53,505 INFO HTTP Request: POST http://127.0.0.1:8000/api/listings/ingest?path=cars_data.json&company_id=1 "HTTP/1.1 200 OK"
+2026-02-11 15:46:55,217 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:46:55,222 INFO Loaded 274 listings
+2026-02-11 15:47:02,170 INFO Opened URL: https://www.myauto.ge/ka/pr/120113189
+2026-02-11 15:47:22,432 INFO Opened URL: https://www.myauto.ge/ka/pr/120486926
+2026-02-11 15:47:30,439 INFO Opened URL: https://www.myauto.ge/ka/pr/120380518
+2026-02-11 15:47:47,502 INFO Opened URL: https://www.myauto.ge/ka/pr/120262258
+2026-02-11 15:55:12,630 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 15:55:12,634 INFO Loaded 274 listings
+2026-02-11 16:06:56,861 INFO Full site parsing completed: 8550 items in 00:11:34
+2026-02-11 16:08:48,124 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 16:08:48,128 INFO Loaded 274 listings
+2026-02-11 16:11:45,316 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 16:11:45,320 INFO Loaded 274 listings
+2026-02-11 16:27:29,370 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 16:27:29,377 INFO Loaded 274 listings
+2026-02-11 16:41:36,424 INFO Starting ingest
+2026-02-11 16:41:36,824 INFO HTTP Request: GET http://127.0.0.1:8000/health "HTTP/1.1 200 OK"
+2026-02-11 16:41:37,617 INFO HTTP Request: POST http://127.0.0.1:8000/api/listings/ingest?path=cars_data.json&company_id=1 "HTTP/1.1 200 OK"
+2026-02-11 16:41:39,353 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 16:41:39,364 INFO Loaded 286 listings
+2026-02-11 17:01:58,175 INFO Full site parsing completed: 13870 new items, 8517 duplicates skipped in 00:34:25
+2026-02-11 17:02:13,368 INFO Starting ingest
+2026-02-11 17:02:13,780 INFO HTTP Request: GET http://127.0.0.1:8000/health "HTTP/1.1 200 OK"
+2026-02-11 17:02:14,560 INFO HTTP Request: POST http://127.0.0.1:8000/api/listings/ingest?path=cars_data.json&company_id=1 "HTTP/1.1 200 OK"
+2026-02-11 17:02:16,080 INFO HTTP Request: GET http://127.0.0.1:8000/api/listings?company_id=1&with_scores=true "HTTP/1.1 200 OK"
+2026-02-11 17:02:16,102 INFO Loaded 286 listings
+2026-02-11 17:02:23,794 INFO Full site parsing completed: 0 new items, 22387 duplicates skipped in 00:00:00
